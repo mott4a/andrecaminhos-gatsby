@@ -52,17 +52,6 @@ const Pages = styled.div`
     border-radius: 6px;
     width: auto;
     position: relative;
-
-    &::after {
-        content: "";
-        position: absolute;
-        left: 85%;
-        top: 31%;
-        right: 5%;
-        bottom: 0;
-        opacity: 0;
-
-    }
 }
 `
 

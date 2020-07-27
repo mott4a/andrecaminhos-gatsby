@@ -12,6 +12,7 @@ import Menu from "../components/menu/index";
 import GlobalStyle from "../components/globalstyle";
 
 
+
 const Container = styled.div`
   background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg") repeat-y;
   background-size: 100%;

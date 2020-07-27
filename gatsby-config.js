@@ -54,7 +54,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto', 'Chelsea Market', 'Avenir']
+          families: ['Roboto', 'Chelsea Market', 'Avenir', 'Montserrat']
         }
       }
     }
