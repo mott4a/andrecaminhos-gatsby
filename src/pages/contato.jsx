@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Menu from "../components/menu/index";
 import GlobalStyle from "../components/globalstyle";
 
+import { AiFillMail, AiOutlineWhatsApp } from "react-icons/ai";
 
 const Container = styled.div`
   background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg") repeat-y;
@@ -96,6 +97,16 @@ const Principal = styled.main`
   footer{
     margin-top: 10px;
     text-align: initial;
+
+    #wpp{
+      color: #25D366;
+      font-size: 25px;
+    }
+
+    #yahoo{
+      color: #410093;
+      font-size: 25px;
+    }
   }
 `
 
@@ -193,9 +204,8 @@ const Contato = () => {
               </button>
               </form>
               <footer>
-                <p><span role="img" aria-label="email">✉</span> contato@andrecaminhos.com.br</p>
-                <p><span role="img" aria-label="telefone">📞</span> +55 (021) 99479-8382</p>
-                <p><span role="img" aria-label="selfie">🤳</span> @mandrepinto</p>
+                <p><AiFillMail id="yahoo" /> andrecaminhos@yahoo.com.br</p>
+                <p><AiOutlineWhatsApp id="wpp" /> +55 (021) 99479-8382</p>
               </footer> 
           </Principal>
         </Wrapper>

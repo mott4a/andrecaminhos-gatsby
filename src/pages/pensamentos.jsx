@@ -11,7 +11,7 @@ import { graphql, StaticQuery, Link } from "gatsby"
 
 const Container = styled.div`
   background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg") repeat-y;
-  background-size: 100%;
+  background-size: cover;
   font-family: Roboto;
   min-height: 100vh;
   display: flex;
@@ -19,7 +19,7 @@ const Container = styled.div`
 `
 
 const Title = styled.div`
-  width: 50vw;
+  width: 85%;
   color: white;
   display: flex;
   padding: 5px;
@@ -27,6 +27,7 @@ const Title = styled.div`
   margin-right: auto;
   flex-direction: column;
   font-family: Chelsea Market;
+  margin-top: 7vh;
   
     img {
         height: auto;
@@ -36,10 +37,12 @@ const Title = styled.div`
 
     h1{
       text-align: center;
+      color: black;
     }
 
     h4{
       text-align: justify;
+      color: blue;
     }
 `
 

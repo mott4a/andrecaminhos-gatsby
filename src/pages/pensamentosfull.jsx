@@ -10,16 +10,16 @@ import Post from "../components/post"
 import { graphql, StaticQuery } from "gatsby"
 
 const Container = styled.div`
-  background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg");
-  background-size: 100%;
+  background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg") repeat-y;
+  background-size: cover;
   font-family: Roboto;
-  margin-left: auto;
-  margin-right: auto;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 
 const Title = styled.div`
-  width: 50vw;
+  width: 85%;
   color: white;
   display: flex;
   padding: 5px;
@@ -27,6 +27,7 @@ const Title = styled.div`
   margin-right: auto;
   flex-direction: column;
   font-family: Chelsea Market;
+  margin-top: 7vh;
   
     img {
         height: auto;
@@ -36,19 +37,14 @@ const Title = styled.div`
 
     h1{
       text-align: center;
+      color: black;
     }
 
     h4{
       text-align: justify;
+      color: blue;
     }
 `
-
-const Pages = styled.div`
-  margin-bottom: 6vh;
-`
-
-
-
 
 const Pensamentos = () => (
   <Container>
@@ -80,7 +76,6 @@ const Pensamentos = () => (
         </div>
       )
     }}/>
-    <Pages />
   </Container>
 )
 

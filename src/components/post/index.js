@@ -9,13 +9,11 @@ const Container = styled.div`
     color: white;
     background: rgba(196, 196, 196, 0.6);
     backdrop-filter: blur(50px);
-    width: 50%;
-    max-width: fit-content;
+    width: 85%;
     border-radius: 5px;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     background: rgba(34,34,34,0.75);
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
 

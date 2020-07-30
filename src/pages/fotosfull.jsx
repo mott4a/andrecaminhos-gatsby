@@ -15,7 +15,7 @@ import GlobalStyle from "../components/globalstyle";
 
 const Container = styled.div`
   background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg") repeat-y;
-  background-size: 100%;
+  background-size: cover;
   font-family: Roboto;
   min-height: 100vh;
   display: flex;
@@ -27,6 +27,7 @@ const FotosWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: calc(6vh + 10px);
 
   img{
     margin: 10px;

@@ -5,7 +5,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Img from "gatsby-image"
 
-
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
@@ -14,7 +13,7 @@ import GlobalStyle from "../components/globalstyle";
 
 const Container = styled.div`
   background: lightblue url("https://i.ibb.co/Rb0TfzW/bghistoria.jpg") repeat-y;
-  background-size: 100%;
+  background-size: cover;
   font-family: Roboto;
   min-height: 100vh;
   display: flex;
@@ -26,6 +25,7 @@ const FotosWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: calc(6vh + 10px);
 
   img{
     margin: 10px;
@@ -87,7 +87,7 @@ const Fotos = () => {
           <Menu />
           <FotosWrapper>
             {album01.nodes.map(image =>(
-              <div style={{width: "500px", height: "500px"}}>
+              <div style={{width: "500px", height: "500px", borderRadius: "10px"}}>
               <Img key={image.id} fluid={image.childImageSharp.fluid} alt="Album 1" />
               </div>
             ))}
