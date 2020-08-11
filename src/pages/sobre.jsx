@@ -1,9 +1,10 @@
 import React from "react";
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
 import GlobalStyle from "../components/globalstyle";
+import SEO from "../components/seo"
+
 
 import { Link } from "gatsby"
 
@@ -97,10 +98,7 @@ const Sobre = () => {
     return(
     <>
     <GlobalStyle />
-    <Helmet>
-        <meta charSet="utf-8" />
-        <title>André Caminhos - Sobre</title>
-    </Helmet>
+    <SEO title="Sobre" />
     <Container>
         <Menu />
         <Wrapper>

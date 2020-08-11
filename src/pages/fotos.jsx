@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet"
 
 import { useStaticQuery, graphql, Link } from "gatsby"
 
@@ -8,6 +7,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
+import SEO from "../components/seo"
 import GlobalStyle from "../components/globalstyle";
 
 
@@ -21,15 +21,16 @@ const Container = styled.div`
 `
 
 const FotosWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: calc(6vh + 10px);
+  display: grid;
+  padding:60px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
 
-  img{
-    margin: 10px;
-  }
+  margin-top: calc(6vh + 10px);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 `
 
 const Pages = styled.div`
@@ -60,15 +61,15 @@ const Fotos = () => {
   const { album01 } = useStaticQuery(graphql`
   query {
     album01: allFile(
-      limit: 9,
+      limit: 99,
       filter: {sourceInstanceName: {eq: "album01"},
        extension: {eq: "jpg"}}
       ) {
       nodes {
         id
         childImageSharp {
-          fluid(maxHeight: 500, maxWidth: 500, quality: 100) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -78,18 +79,22 @@ const Fotos = () => {
 
   return (
       <>
-          <GlobalStyle />
+      <GlobalStyle />
+      <SEO title="Fotos" />
       <Container>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>André Caminhos - Fotos</title>
-        </Helmet>
           <Menu />
           <FotosWrapper>
             {album01.nodes.map(image =>(
-              <div style={{width: "500px", height: "500px", borderRadius: "10px"}}>
-              <Img key={image.id} fluid={image.childImageSharp.fluid} alt="Album 1" />
-              </div>
+              <Img
+              className="img_album"
+              key={image.id}
+              fluid={image.childImageSharp.fluid}
+              alt="Album 1"
+              imgStyle={{
+                objectFit: "cover",
+                borderRadius: "3px"
+              }}
+              />
             ))}
           </FotosWrapper>
 

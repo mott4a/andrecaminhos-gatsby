@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  .fixed{
+    position: fixed;
+  }
 `
 
 export default GlobalStyle;

@@ -1,8 +1,9 @@
 import React from "react";
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
+import SEO from "../components/seo"
+
 import GlobalStyle from "../components/globalstyle";
 
 
@@ -30,11 +31,8 @@ const Container = styled.div`
 const IndexPage = () => (
   <>
   <GlobalStyle />
+  <SEO title="Home" />
   <Container>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>André Caminhos - Início</title>
-      </Helmet>
       <Menu />
       <span>
         <img id="img" src="https://i.ibb.co/Wfywpw4/logowhite.png" alt="Logo Andrécaminhos" />

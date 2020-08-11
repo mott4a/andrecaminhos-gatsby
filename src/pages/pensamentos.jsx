@@ -1,10 +1,10 @@
 import React from "react";
-import { Helmet } from "react-helmet"
 
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
 import GlobalStyle from "../components/globalstyle";
+import SEO from "../components/seo"
 import Post from "../components/post"
 
 import { graphql, StaticQuery, Link } from "gatsby"
@@ -84,12 +84,10 @@ const Pages = styled.div`
 
 
 const Pensamentos = () => (
+  <>
+  <SEO title="Pensamentos" />
+  <GlobalStyle />
   <Container>
-      <Helmet>
-      <meta charSet="utf-8" />
-      <title>André Caminhos - Pensamentos</title>
-      </Helmet>
-    <GlobalStyle />
     <Menu />
     <Title>
       <center>
@@ -117,32 +115,35 @@ const Pensamentos = () => (
 
     <Pages>
       <center>
-      <Link to="/pensamentosfull/"><button class="btn-1">Carregar mais histórias... <span role="img" aria-label="loading">⌛</span></button></Link>
+      <Link to="/pensamentosfull/"><button class="btn-1">Carregar mais pensamentos... <span role="img" aria-label="loading">⌛</span></button></Link>
       </center>
     </Pages>
 
   </Container>
+  </>
 )
 
 const pensamentosQuery = graphql`
-query {
-  allMarkdownRemark(limit: 4, sort: {fields: [frontmatter___date], order: DESC}) {
+{
+  allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]},
+    filter: {fileAbsolutePath: {regex: "/(pensamentos)/.*\\\\.md$/"}},
+    limit: 3
+  ) {
     totalCount
     edges {
       node {
         id
         frontmatter {
           title
-          date(formatString: "DD [de]  MMMM, YYYY", locale: "pt")
-          author
+          date(formatString: "MMMM DD, YYYY")
           body
+          author
         }
-        excerpt
       }
     }
   }
 }
-
 `;
 
 export default Pensamentos

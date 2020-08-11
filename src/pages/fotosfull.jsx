@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet"
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -9,6 +8,8 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
+import SEO from "../components/seo"
+
 import GlobalStyle from "../components/globalstyle";
 
 
@@ -56,12 +57,9 @@ const Fotos = () => {
 
   return (
       <>
-          <GlobalStyle />
+      <GlobalStyle />
+      <SEO title="Fotos" />
       <Container>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>André Caminhos - Fotos</title>
-        </Helmet>
           <Menu />
           <FotosWrapper>
             {album01.nodes.map(image =>(

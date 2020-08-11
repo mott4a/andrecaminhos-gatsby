@@ -45,6 +45,7 @@ const Menu = () => (
     <span>
       <Link to="/">Home</Link>
       <Link to="/pensamentos">Pensamentos</Link>
+      <Link to="/historias">Histórias</Link>
       <Link to="/fotos">Fotos</Link>
       <Link to="/sobre">Sobre</Link>
       <Link to="/contato">Contato</Link>

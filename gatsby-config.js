@@ -3,6 +3,7 @@ module.exports = {
     title: `André Caminhos`,
     description: `Blog de um ciclista, alpinista.`,
     author: `mott4a`,
+    lang: `pt-br`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,8 +24,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/pages/posts`,
+        name: `pensamentos`,
+        path: `${__dirname}/src/pages/posts/pensamentos`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `historias`,
+        path: `${__dirname}/src/pages/posts/historias`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -47,7 +55,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `album01`,
-        path: `${__dirname}/src/fotos/01`, // wherever background images are stored
+        path: `${__dirname}/src/fotos/01`,
       },
     },
     {

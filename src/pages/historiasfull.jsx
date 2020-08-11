@@ -4,9 +4,8 @@ import styled from "styled-components"
 
 import Menu from "../components/menu/index";
 import GlobalStyle from "../components/globalstyle";
-import Post from "../components/post"
 import SEO from "../components/seo"
-
+import Post from "../components/post"
 
 import { graphql, StaticQuery } from "gatsby"
 
@@ -47,21 +46,22 @@ const Title = styled.div`
     }
 `
 
-const Pensamentos = () => (
+
+const HistoriasFull = () => (
   <>
+  <SEO title="Histórias" />
   <GlobalStyle />
-  <SEO title="Pensamentos" />
   <Container>
     <Menu />
     <Title>
       <center>
         <img src="https://i.ibb.co/PD7HY0S/photo2.png" alt="Foto do M. André Pinto"/>
       </center>
-      <h1>VARIAÇÕES DO MESMO TEMA</h1>
+      <h1>HISTÓRIAS</h1>
       <h4>Escalada, montanha, amigos, desafio, travessia, fissura, bolder, adêrencia, segurança, amizade, entalamento, bolinho com caldo de cana, retinida, tetinho, companheirismo, tirolesa, fugareiro, cumplicidade, Abertura de Temporada na Urca, UIAA, freio oito, ATC, pérolas do Menguele, grigri, temporal, crux, cachoeira, bike, rapel, paixão, cume, trilha, perrengue, frio, boldriê, felicidade, mosquetão, acampamento, frustração, fenda, calor, calafrio, grampo, material móvel, chapeleta, calor, bota, conquista, jumar, chaminé, furadeira ou punho, capacete, barrinha de cereal, cliff, falésia, sapatilha, mochila, Banana passa, nut, falésia, pedreira, 6ªsup, magnésio, parede,gostinho de quero mais; E essas coisas que entram em nossa vida e ficam para sempre!</h4>
     </Title>
 
-    <StaticQuery query={pensamentosQuery} render={data => {
+    <StaticQuery query={historiasQuery} render={data => {
       return(
         <div>
           {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -79,25 +79,26 @@ const Pensamentos = () => (
   </>
 )
 
-const pensamentosQuery = graphql`
-query {
-  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+const historiasQuery = graphql`
+{
+  allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]},
+    filter: {fileAbsolutePath: {regex: "/(historias)/.*\\\\.md$/"}}
+  ) {
     totalCount
     edges {
       node {
         id
         frontmatter {
           title
-          date(formatString: "DD [de]  MMMM, YYYY", locale: "pt")
-          author
+          date(formatString: "MMMM DD, YYYY")
           body
+          author
         }
-        excerpt
       }
     }
   }
 }
-
 `;
 
-export default Pensamentos
+export default HistoriasFull

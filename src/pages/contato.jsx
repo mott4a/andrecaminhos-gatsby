@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet"
 
 import styled from "styled-components"
 
 import Menu from "../components/menu/index";
+import SEO from "../components/seo"
 import GlobalStyle from "../components/globalstyle";
 
 import { AiFillMail, AiOutlineWhatsApp } from "react-icons/ai";
@@ -107,6 +107,15 @@ const Principal = styled.main`
       color: #410093;
       font-size: 25px;
     }
+
+    p{
+      display: flex;
+      align-items: center;
+
+      span{
+        margin-left: 6px;
+      }
+    }
   }
 `
 
@@ -149,10 +158,7 @@ const Contato = () => {
     return(
     <>
         <GlobalStyle />
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>André Caminhos - Contato</title>
-        </Helmet>
+        <SEO title="Contato" />
     <Container>
         <Menu />
         <Wrapper>
@@ -204,8 +210,8 @@ const Contato = () => {
               </button>
               </form>
               <footer>
-                <p><AiFillMail id="yahoo" /> andrecaminhos@yahoo.com.br</p>
-                <p><AiOutlineWhatsApp id="wpp" /> +55 (021) 99479-8382</p>
+                <p><AiFillMail id="yahoo" /><span>andrecaminhos@yahoo.com.br</span></p>
+                <p><AiOutlineWhatsApp id="wpp" /><span>+55 (021) 99479-8382</span></p>
               </footer> 
           </Principal>
         </Wrapper>
