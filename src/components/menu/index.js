@@ -40,10 +40,9 @@ const Container = styled.div`
 const Menu = () => (
   <Container>
     <span id="logo">
-      <p>ANDRECAMINHOS</p>
+      <p><Link to="/">ANDRECAMINHOS</Link></p>
     </span>
     <span>
-      <Link to="/">Home</Link>
       <Link to="/pensamentos">Pensamentos</Link>
       <Link to="/historias">Histórias</Link>
       <Link to="/fotos">Fotos</Link>
